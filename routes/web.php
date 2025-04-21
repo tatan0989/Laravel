@@ -2,16 +2,15 @@
 
 use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Homecontroller;
+use App\Http\Controllers\HomeController;
 
 /* rutas */
 
-Route::get('/', Homecontroller ::class );
+Route::get('/', HomeController ::class );
 
-Route::controller(CursoController::class)->group(function(){
-    Route::get('cursos', 'index');
-    Route:: get('cursos/create', 'create');
-    Route::get('cursos/{curso}', 'show');
-    
-});
+Route :: get('cursos',[CursoController::class,'index']);
+
+Route :: get('cursos/create',[CursoController::class,'create']);
+
+Route :: get('cursos/{curso}',[CursoController::class,'show']);
 
