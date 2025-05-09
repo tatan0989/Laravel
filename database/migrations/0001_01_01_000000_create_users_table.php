@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();//Dato unico
             $table->timestamp('email_verified_at')->nullable();//verificarcion de datos
             $table->string('password');// Almacena contraseñas
-            $table->string('avatar');
             $table->rememberToken();// crea columnas varchar de tamaño 100
             $table->timestamps();// crea dos columnas craeted_at updated_at
         });
