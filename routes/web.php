@@ -14,3 +14,4 @@ Route :: get('cursos/create',[CursoController::class,'create']);
 
 Route :: get('cursos/{curso}',[CursoController::class,'show']);
 
+
