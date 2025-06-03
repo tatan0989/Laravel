@@ -18,7 +18,9 @@ class CursoController extends Controller
         return view('cursos.create');
     }
 
-    public function show($curso){
+    public function show($id){
+        $curso = Curso::find($id);
+        
         return view('cursos.show', compact('curso'));
     }
 
