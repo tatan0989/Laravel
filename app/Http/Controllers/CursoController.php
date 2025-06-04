@@ -17,7 +17,13 @@ class CursoController extends Controller
     public function create(){
         return view('cursos.create');
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
+        $request->validate([
+            'name'=>'required',
+            'descripcion'=>'required',
+            'categoria'=>'required',
+        ]);
         $curso = new Curso();
 
         $curso->name = $request->name;
