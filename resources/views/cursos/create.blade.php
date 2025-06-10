@@ -6,11 +6,26 @@
 <form action="{{route('cursos.store')}}" method="POST">
     @csrf
     <label>
-        Nombre:<br>
+        Nombre:
+        <br>
         <input type="text" name="name" value="{{old('name')}}">
     </label>
 
     @error('name')
+    <br>
+    <samp>*{{$message}}</samp>
+    <br>  
+    @enderror
+
+    <br>
+    
+     <label>
+        Slug:
+        <br>
+        <input type="text" name="slug" value="{{old('slug')}}">
+    </label>
+
+    @error('slug')
     <br>
     <samp>*{{$message}}</samp>
     <br>  

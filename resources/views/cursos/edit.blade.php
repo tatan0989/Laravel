@@ -12,11 +12,27 @@
     <input type="text" name="name" value="{{ old('name', $curso->name) }}">
     </label>
 
+
     @error('name')
     <br>
     <samp>*{{$message}}</samp>
     <br>  
     @enderror
+
+    <br>
+    
+     <label>
+        Slug:
+        <br>
+        <input type="text" name="slug" value="{{old('slug' , $curso->slug)}}">
+    </label>
+
+    @error('slug')
+    <br>
+    <samp>*{{$message}}</samp>
+    <br>  
+    @enderror
+
 
     <br>
 
