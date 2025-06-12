@@ -3,6 +3,9 @@
 use App\Http\Controllers\CursoController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Mail\ContactanosMailable;
+use Illuminate\Support\Facades\Mail;
+
 
 /* rutas */
 
@@ -25,3 +28,11 @@ Route::delete('cursos/{curso}', [CursoController::class, 'destroy'])->name('curs
 Route::resource('cursos', CursoController::class)->parameters(['asiganturas'=>'curso'])->names('cursos');
 
 Route::view('nosotros','nosotros')->name('nosotros');
+
+Route::get('contactanos', function (){
+
+    Mail::to('estefanyrojas200419@gmail.com')
+    ->send(new ContactanosMailable);
+    return "Mensaje enviado";
+    
+})->name('contactanos');
