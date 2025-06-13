@@ -43,3 +43,8 @@ Route::get('contactanos',[ContactanosController::class, 'index'])
 
 Route::post('contactanos',[ContactanosController::class, 'store'])
 ->name('contactanos.store');
+
+Route::get('prueba', function (){
+    return "Has accedido corectamente a esta ruta";
+    
+});
